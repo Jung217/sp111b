@@ -92,8 +92,7 @@ void WHILE() {
 // do STMT while (E)
 void DO() {
   int doBegin = nextLabel();
-  int doEnd = nextLabel();
-
+  //int doEnd = nextLabel();
   emit("(L%d)\n", doBegin);
   skip("do");
   STMT();
@@ -103,7 +102,7 @@ void DO() {
   skip(")");
   skip(";");
   emit("if T%d goto L%d\n", e, doBegin);
-  emit("(L%d)\n", doEnd);
+  //emit("(L%d)\n", doEnd);
 }
 
 // STMT = WHILE | BLOCK | ASSIGN
