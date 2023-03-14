@@ -1,69 +1,66 @@
-# Compiler
-
-## 語法
+## 測試程式
 
 ```
-PROG = STMTS
-BLOCK = { STMTS }
-STMTS = STMT*
-STMT = WHILE | BLOCK | ASSIGN
-WHILE = while (E) STMT
-ASSIGN = id '=' E;
-E = F (op E)*
-F = (E) | Number | Id
+int a=0;
+do {
+      a += 1;
+}while( a < 10);
 ```
 
 ## 執行結果
 
 ```
-user@DESKTOP-96FRN6B MINGW64 /d/ccc/book/sp/code/c/02-compiler/03-compiler
-$ make clean
-rm -f *.o *.exe
-
-user@DESKTOP-96FRN6B MINGW64 /d/ccc/book/sp/code/c/02-compiler/03-compiler
-$ make
+jung@JUNGLAPTOP:/mnt/c/Users/alex2/NQU/sp111b/習題/習題2$ make
 gcc -std=c99 -O0 lexer.c compiler.c main.c -o compiler
-
-user@DESKTOP-96FRN6B MINGW64 /d/ccc/book/sp/code/c/02-compiler/03-compiler
-$ ./compiler test/while.c
-while (i<10) i = i + 1;
-
+jung@JUNGLAPTOP:/mnt/c/Users/alex2/NQU/sp111b/習題/習題2$ ./compiler test.c
+int a=0;
+do {
+      a += 1;
+}while( a < 10);
 ========== lex ==============
+token=int
+token=a
+token==
+token=0
+token=;
+token=do
+token={
+token=a
+token=+
+token==
+token=1
+token=;
+token=}
 token=while
 token=(
-token=i
+token=a
 token=<
 token=10
 token=)
-token=i
-token==
-token=i
-token=+
-token=1
 token=;
 ========== dump ==============
-0:while
-1:(
-2:i
-3:<
-4:10
-5:)
-6:i
-7:=
-8:i
-9:+
+0:int
+1:a
+2:=
+3:0
+4:;
+5:do
+6:{
+7:a
+8:+
+9:=
 10:1
 11:;
+12:}
+13:while
+14:(
+15:a
+16:<
+17:10
+18:)
+19:;
 ============ parse =============
-(L0)
-t0 = i
-t1 = 10
-t2 = t0 < t1
-goto L1 if T2
-t3 = i
-t4 = 1
-t5 = t3 + t4
-i = t5
-goto L0
-(L1)
+skip(=) got a fail!
+compiler: compiler.c:36: skip: Assertion `0' failed.
+Aborted
 ``` 
