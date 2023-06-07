@@ -4,6 +4,48 @@
 ## 發想
 原來想將老師的程式寫成Python，但Python不像C語言一樣底層，所以重現一些如fork的東西很麻煩，因此參考研究老師使用 thread 跟 TCP 的 IP chat 程式進行延伸作為期末專案
 
+## 操作
+執行server.py
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/00%20exeServer.png)
+
+執行client.py，選擇進入或新增
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/01%20exeClient.png)
+
+進入後選擇伺服器，輸入名稱
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/01%20exeClient1.png)
+
+TTT加入
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/02%20joinChat.png)
+
+Alex加入
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/02%20joinChat1.png)
+
+聊天...
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/03%20chatting.png)
+
+admin加入，要求輸入密碼
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/04%20adminJoin.png)
+
+admin聊天
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/05%20adminSayHi.png)
+
+admin kick Alex
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/06%20adminKick.png)
+
+admin ban TTT
+
+![image](https://github.com/Jung217/sp111b/blob/main/asset/07%20adminBan.png)
+
+
 ## 參考
 [Python_Socket](https://ithelp.ithome.com.tw/articles/10205819)
 
