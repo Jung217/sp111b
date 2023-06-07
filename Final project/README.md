@@ -45,6 +45,16 @@ admin ban TTT
 
 ![image](https://github.com/Jung217/sp111b/blob/main/asset/07%20adminBan.png)
 
+## 備註
+
+* 指令:
+  * adimn:
+    * /kick Alex
+    * /ban Alex 
+  * 其他人:
+    * /leave
+
+PS. leave還有一些bug
 
 ## 參考
 [Python_Socket](https://ithelp.ithome.com.tw/articles/10205819)
