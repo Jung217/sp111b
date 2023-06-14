@@ -97,7 +97,7 @@ def write():
             client.send(message.encode())
 
 
-receive_thread = threading.Thread(target=receive)
+receive_thread = threading.Thread(target=receive) # 用 thread 讓多位 client 連線
 write_thread = threading.Thread(target=write)
 receive_thread.start()
 write_thread.start()
